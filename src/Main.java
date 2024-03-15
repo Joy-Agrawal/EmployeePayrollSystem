@@ -103,12 +103,16 @@ class PayrollSystem{
         int id;
         double salary;
         System.out.println("Please enter the name of the employee");
+        sc.nextLine();
         name = sc.nextLine();
         id = ++idCount;
         System.out.println("Please enter the salary for the employee");
         salary = sc.nextDouble();
         Employee emp = new FullTimeEmployee(name,id,salary);
-        employeeList.add(emp);
+//        employeeList.add(emp);
+        addEmployee(emp);
+        System.out.println("Employee Added Successfully!!!");
+        System.out.println();
     }
     public void addPartTimeEmployee(Scanner sc){
         String name;
@@ -116,6 +120,7 @@ class PayrollSystem{
         int hoursWorked;
         double hourlySalary;
         System.out.println("Please enter the name of the employee");
+        sc.nextLine();
         name = sc.nextLine();
         id = ++idCount;
         System.out.println("Please enter the Hours worked for the employee");
@@ -123,7 +128,10 @@ class PayrollSystem{
         System.out.println("Please enter the salary for the employee");
         hourlySalary = sc.nextDouble();
         Employee emp = new PartTimeEmployee(name,id,hoursWorked,hourlySalary);
-        employeeList.add(emp);
+//        employeeList.add(emp);
+        addEmployee(emp);
+        System.out.println("Employee Added Successfully!!!");
+        System.out.println();
     }
 }
 public class Main {
